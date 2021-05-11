@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+init=$(gdate +%s.%3N)
+echo "Tap any key at desired tempo, Ctrl-C to finish"
+while read -n 1 -s -r
+do
+	((taps+=1))
+	echo $taps "taps, BPM:" $(bc <<< "scale=1 ; 60*$taps/($(gdate +%s.%3N)-$init)")
+done
+
+#apparently linux can use date +%s.%3N to get milliseconds.
+#macos and some other systems must use gdate from coreutils.
