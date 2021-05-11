@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-
+echo "Cumulative Tap Metronome v1"
+echo "Tap any key at the desired tempo, Ctrl-C to finish"
 read -n 1 -s -r #press a key starts timer
-echo "Tap any key at desired tempo, Ctrl-C to finish"
+echo "Starting..."
 init=$(gdate +%s.%3N)
 while read -n 1 -s -r
 do
