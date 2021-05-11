@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-init=$(gdate +%s.%3N)
+read -n 1 -s -r #press a key starts timer
 echo "Tap any key at desired tempo, Ctrl-C to finish"
+init=$(gdate +%s.%3N)
 while read -n 1 -s -r
 do
 	((taps+=1))
